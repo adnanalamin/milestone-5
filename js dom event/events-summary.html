@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Summary</title>
+</head>
+<body>
+    <h1>Js DOM Events Summary</h1>
+    <h3 id="handelar-status">Default Text</h3>
+    <p id="input-text-display">Deafult value</p>
+    <input id="input-fild" type="text">
+    <button id="btn-update">Update</button>
+    <br>
+    <br>
+    <button onclick="handelOnClick()">Handelar event By add onclick function </button>
+    <button id="event-listener">Handel Event By Event Listener</button>
+
+    <script>
+        function handelOnClick (){
+            const handelarStatus = document.getElementById('handelar-status');
+            handelarStatus.innerText  = 'Handel by Functio attace onclick attribute';
+        }
+        // Option-2
+        document.getElementById('event-listener').addEventListener('click',function(){
+            const handelarStatus = document.getElementById('handelar-status');
+            handelarStatus.innerText = 'Text Update by add event listner'
+        })
+        // Option 2 recap
+        document.getElementById('btn-update').addEventListener('click',function(){
+            const inputFiled = document.getElementById('input-fild');
+            const inputText = inputFiled.value;
+
+            const p = document.getElementById('input-text-display');
+            p.innerText = inputText;
+
+            inputFiled.value = '';
+
+        })
+
+    </script>
+</body>
+</html>
